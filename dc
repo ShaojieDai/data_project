@@ -1,0 +1,16 @@
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import os
+from datetime import datetime
+
+if os.path.isfile("data_collect_1.xlsx"):
+    filepath = "data_collect_1.xlsx"
+    print("loading from file")
+else:
+    filepath = "http://www.osr.nsw.gov.au/sites/default/files/file_manager/penalty_data_set_0.csv"
+    print("loading from the internet")
+
+penalty_data = pd.read_csv(filepath)
+print("done")
